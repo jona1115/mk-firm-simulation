@@ -1,7 +1,7 @@
 from runner_common import create_configuration, run_and_report
 
-SIM_DURATION_MS = 35  # adjust as needed
-cfg = create_configuration(SIM_DURATION_MS, "simso.schedulers.MK_EDF")
+SIM_DURATION_MS = 35  # raise to 500+ for longer runs
+cfg = create_configuration(SIM_DURATION_MS, "simso.schedulers.EDF")
 
 # Task set 1, below task set is 100% utilization
 # cfg.add_task(name="T1", identifier=1, period=20, wcet=5, deadline=20, m=5, k=5)       # 25%, period, deadline unit in ms
