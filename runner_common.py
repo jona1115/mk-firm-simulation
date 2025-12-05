@@ -45,21 +45,21 @@ def _print_results(cfg, model):
     miss_ratio = miss_count / total_jobs if total_jobs else 0.0
     print(f"Deadline miss ratio: {miss_ratio:.4f}")
 
-    scheduler = model.results.scheduler
-    sched_overhead = (scheduler.schedule_overhead +
-                      scheduler.activate_overhead +
-                      scheduler.terminate_overhead)
-    proc_overhead = sum(proc.context_save_overhead + proc.context_load_overhead
-                        for proc in model.results.processors.values())
-    total_overhead = sched_overhead + proc_overhead
-    duration = cfg.duration or 1
-    overhead_ratio = total_overhead / duration
-    overhead_ms = total_overhead / cfg.cycles_per_ms
-    print("Overhead report:")
-    print(f"  Scheduler overhead (cycles): {sched_overhead}")
-    print(f"  Processor overhead (cycles): {proc_overhead}")
-    print(f"  Total overhead: {total_overhead} cycles ({overhead_ms:.3f} ms)")
-    print(f"  Overhead ratio: {overhead_ratio:.6f}")
+    # scheduler = model.results.scheduler
+    # sched_overhead = (scheduler.schedule_overhead +
+    #                   scheduler.activate_overhead +
+    #                   scheduler.terminate_overhead)
+    # proc_overhead = sum(proc.context_save_overhead + proc.context_load_overhead
+    #                     for proc in model.results.processors.values())
+    # total_overhead = sched_overhead + proc_overhead
+    # duration = cfg.duration or 1
+    # overhead_ratio = total_overhead / duration
+    # overhead_ms = total_overhead / cfg.cycles_per_ms
+    # print("Overhead report:")
+    # print(f"  Scheduler overhead (cycles): {sched_overhead}")
+    # print(f"  Processor overhead (cycles): {proc_overhead}")
+    # print(f"  Total overhead: {total_overhead} cycles ({overhead_ms:.3f} ms)")
+    # print(f"  Overhead ratio: {overhead_ratio:.6f}")
 
     mk_satisfied, mk_total = _mk_window_stats(model)
     mk_fraction = (mk_satisfied / mk_total) if mk_total else 0.0

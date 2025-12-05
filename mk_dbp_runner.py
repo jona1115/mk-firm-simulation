@@ -1,7 +1,7 @@
 from runner_common import create_configuration, run_and_report
 
 SIM_DURATION_MS = 60000 # change this for different simulation duration
-cfg = create_configuration(SIM_DURATION_MS, "simso.schedulers.MK_EDF")
+cfg = create_configuration(SIM_DURATION_MS, "simso.schedulers.MK_DBP")
 
 # Task set 1, below task set is 100% utilization
 # cfg.add_task(name="T1", identifier=1, period=20, wcet=5, deadline=20, m=5, k=5)       # 25%, period, deadline unit in ms
@@ -25,7 +25,7 @@ cfg.add_task(name="T6", identifier=6,   period=75,  wcet=20,    deadline=75,    
 cfg.add_task(name="T7", identifier=7,   period=60,  wcet=15,    deadline=60,    m=2, k=5)
 cfg.add_task(name="T8", identifier=8,   period=55,  wcet=12,    deadline=55,    m=3, k=4)
 cfg.add_task(name="T9", identifier=9,   period=25,  wcet=9,     deadline=25,    m=1, k=2)
-cfg.add_task(name="T10", identifier=10,  period=80,  wcet=11,   deadline=80,    m=5, k=7)
+cfg.add_task(name="T10", identifier=10,  period=80,  wcet=11,    deadline=80,   m=5, k=7)
 
 
 run_and_report(cfg)
