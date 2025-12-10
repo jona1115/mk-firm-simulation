@@ -1,3 +1,6 @@
 [submodule "simso"]
 	path = simso
 	url = https://github.com/jona1115/simso.git
+[submodule "docs/CPRE558-Project-Report"]
+	path = docs/CPRE558-Project-Report
+	url = https://github.com/jona1115/CPRE558-Project-Report.git
